@@ -1,15 +1,7 @@
-FROM golang:1.18.4-bullseye as build
+FROM nginx:1.23.1-alpine
 
-WORKDIR /go/src/app
-COPY /GoLang_image/hello.go .
+RUN rm /etc/nginx/conf.d/default.conf
+COPY html /user/share/nginx/html
 
-RUN go mod init fc-test && \
-	go mod verify && \
-	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o /main .
-
-
-FROM scratch
-
-COPY --from=build /main .
-
-CMD ["./main"]
+ENTRYPOINT ["docker-entrypoint.sh"]
+CMD ["nginx", "-g", "daemon off"]

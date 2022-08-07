@@ -1,9 +1,11 @@
-Exercício 1 Docker com imagem Go
+Exercício 2 Docker - Nginx com Node.js
 
-No repositório encontra-se o Dockerfile usado para fazer o build da imagem com multistage building, para diminuir o tamanho. 
-Quando olhei da minha máquina, a imagem tinha 4,12 MB, mas no DockerHub consta como 1,77 MB.
+No repositório encontra-se o Docker-compose usado para fazer o build da imagem com multistage building, para diminuir o tamanho. 
+Coloquei separado cada fase para poder ver o retorno do banco separado.
+Basta executar o comando docker-compose up -d
 
 A imagem gerada encontra-se no DockerHub no caminho https://hub.docker.com/repository/docker/thimo28/codeeducation
 
-Para executá-la, basta digitar o seguinte comando: 
-docker run thimo28/codeeducation
+A página inicial é a http://localhost:8080/
+Para ver a lista de nomes, digite a URL http://localhost:8080/init
+Para ver a nova lista de nomes com um registro recentemente adicionado, digite a URL http://localhost:8080/newList
