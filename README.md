@@ -1,4 +1,4 @@
-Exercício 2 Docker - Nginx com Node.js
+# Exercício 2 Docker - Nginx com Node.js
 
 No repositório encontra-se o Docker-compose usado para fazer o build da imagem com multistage building, para diminuir o tamanho. 
 Coloquei separado cada fase para poder ver o retorno do banco separado.
