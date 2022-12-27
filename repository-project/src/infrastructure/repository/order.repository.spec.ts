@@ -75,9 +75,10 @@ describe("Order Repository test", () => {
         const customer = new Customer("c1", "Customer 1");
         const address = new Address("Street 1", 123, "00095-409", "Belo Horizonte");
         customer.changeAddress(address);
-        const customer2 = new Customer("c1", "Customer 1");
-        const address2 = new Address("Street 1", 123, "00095-409", "Belo Horizonte");
+        const customer2 = new Customer("c2", "Customer 2");
+        const address2 = new Address("Street 2", 456, "00056-381", "Arraial");
         customer2.changeAddress(address2);
+        await customerRepository.create(customer);
         await customerRepository.create(customer2);
 
         const productRepository = new ProductRepository();
