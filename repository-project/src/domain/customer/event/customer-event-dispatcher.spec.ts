@@ -1,12 +1,10 @@
-import Address from "../../entity/address";
+import EventDispatcher from "../../@shared/event/event-dispatcher";
+import Address from "../value-object/address";
 import CustomerAddressChangedEvent from "./customer-address-changed.event";
 import CustomerCreatedEvent from "./customer-created.event";
 import SendMessageWhenAddressChangedHandler from "./handler/send-message-when-address-changed.handler";
 import SendMessage1WhenCustomerIsCreatedHandler from "./handler/send-message1-when-customer-is-created.handler";
 import SendMessage2WhenCustomerIsCreatedHandler from "./handler/send-message2-when-customer-is-created.handler";
-import SendEmailWhenProductIsCreatedHandler from "../product/handler/send-email-when-product-is-created.handler";
-import ProductCreatedEvent from "../product/product-created.event";
-import EventDispatcher from "../@shared/event-dispatcher";
 
 describe("Customer Domain Event tests", () => {
 
